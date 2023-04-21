@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #282c34e7;
+  color: white;
+  padding: 6px;
+  margin-bottom: 1px;
+  box-shadow: 1px 2px rgb(0, 0, 0);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  position: sticky;
+  bottom: 5px;
+  background: linear-gradient(to right, rgb(87, 176, 244), rgb(180, 249, 226));
+}

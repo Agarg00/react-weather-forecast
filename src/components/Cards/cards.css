@@ -1,0 +1,21 @@
+.card {
+    background: linear-gradient(to right, rgb(87, 176, 244), rgb(180, 249, 226));
+}
+
+.back {
+    background: linear-gradient(to right, rgb(87, 176, 244), rgb(180, 249, 226));
+    /* background-size: cover; */
+}
+
+.sun {
+    transform: translate(0,11px);
+}
+
+.pop {
+    transform: translate(-4px,6px);
+}
+
+.loc, .humi, .air, .wind, .gust, .visi, .cloud{
+    height: 24px;
+    transform: translate(4px,4px);
+}
