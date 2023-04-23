@@ -8,6 +8,7 @@ import search from './search.png'
 import ReactjsAlert from "reactjs-alert";
 
 const Home = () => {
+    const api_key = 'your api key';
     const [city, setCity] = useState('')
     const [data,setData] = useState([])
     const [curr, setCurr] = useState([])
@@ -36,13 +37,13 @@ const Home = () => {
         if(lat != null && lang !=null){
 
             //for forcast
-            fetch('http://api.openweathermap.org/data/2.5/forecast?lat='+ lat+ '&lon='+lang+'&appid=a5982e3dd317dd5a5a092827e148510c&units=metric')
+            fetch('http://api.openweathermap.org/data/2.5/forecast?lat='+ lat+ '&lon='+lang+'&appid='+ api_key + '&units=metric')
             .then(response => response.json())
             .then(res => setData(res))
             .catch(e => setErr('Inavlid City'))
 
             // for current weather
-            fetch('http://api.openweathermap.org/data/2.5/weather?lat='+ lat+ '&lon='+lang+'&appid=a5982e3dd317dd5a5a092827e148510c&units=metric')
+            fetch('http://api.openweathermap.org/data/2.5/weather?lat='+ lat+ '&lon='+lang+'&appid=' + api_key + '&units=metric')
             .then(response => response.json())
             .then((res) => setCurr(res))
             .catch(e => setErr('Inavlid City'))
@@ -56,13 +57,13 @@ const Home = () => {
         else {
 
             // forecast
-            fetch('http://api.openweathermap.org/data/2.5/forecast?q='+ city + '&appid=a5982e3dd317dd5a5a092827e148510c&units=metric')
+            fetch('http://api.openweathermap.org/data/2.5/forecast?q='+ city + '&appid=' + api_key + '&units=metric')
             .then(response => response.json())
             .then((res) => setData(res))
             .catch(e => setErr('Inavlid City'))
 
              // current
-            fetch('http://api.openweathermap.org/data/2.5/weather?q='+ city + '&appid=a5982e3dd317dd5a5a092827e148510c&units=metric')
+            fetch('http://api.openweathermap.org/data/2.5/weather?q='+ city + '&appid=' + api_key + '&units=metric')
             .then(response => response.json())
             .then((res) => setCurr(res))
             .catch(e => setErr('Inavlid City'))
